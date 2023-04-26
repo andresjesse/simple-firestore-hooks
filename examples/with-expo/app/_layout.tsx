@@ -4,7 +4,7 @@ import {
   SplashScreen, // Import `SplashScreen` from `expo-router` instead of `expo-splash-screen`
   Slot, // This example uses a basic Layout component, but you can use any Layout.
 } from "expo-router";
-import useFirebase from "./hooks/useFirebase";
+import useFirebase from "../hooks/useFirebase";
 import firebaseConfig from "../config/firebaseConfig";
 
 export default function Layout() {

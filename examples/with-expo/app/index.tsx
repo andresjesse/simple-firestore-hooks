@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Alert, Text, TextInput, View } from "react-native";
 import StyledButton from "../components/StyledButton";
 import globalStyles from "../styles/globalStyles";
-import useAuth from "./hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 import { useRouter } from "expo-router";
 
 export default function Page() {
