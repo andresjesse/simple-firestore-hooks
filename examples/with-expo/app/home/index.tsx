@@ -10,7 +10,7 @@ import Book from "../../types/Book";
 import ViewBook from "../../components/ViewBook";
 
 export default function Home() {
-  const { data, create, refreshData } = useCollection<Book>("books");
+  const { data, create, remove, refreshData } = useCollection<Book>("books");
 
   return (
     <View style={globalStyles.container}>
@@ -42,7 +42,15 @@ export default function Home() {
 
       <FlatList
         data={data}
-        renderItem={({ item }) => <ViewBook book={item} />}
+        renderItem={({ item }) => (
+          <ViewBook
+            book={item}
+            onDelete={async () => {
+              await remove(item.id!);
+              await refreshData();
+            }}
+          />
+        )}
         style={{ width: "100%" }}
       />
     </View>
