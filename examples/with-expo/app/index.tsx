@@ -1,9 +1,9 @@
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Alert, Text, TextInput, View } from "react-native";
 import StyledButton from "../components/StyledButton";
-import globalStyles from "../styles/globalStyles";
 import useAuth from "../hooks/useAuth";
-import { useRouter } from "expo-router";
+import globalStyles from "../styles/globalStyles";
 
 export default function Page() {
   const { login } = useAuth();

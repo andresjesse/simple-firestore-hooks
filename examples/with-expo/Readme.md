@@ -20,6 +20,8 @@ This example app uses `simple-firestore-hooks` with Expo and Expo. Expo Router i
 
 4. Check `app/home/index.tsx` for `useCollection` example.
 
+5. Check `app/home/[id]/index.tsx` for `useDocument` example.
+
 ## Additional reference for firebase and expo
 
 https://docs.expo.dev/guides/using-firebase/

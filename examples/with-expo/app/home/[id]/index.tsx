@@ -1,13 +1,12 @@
-import { View, Text, Alert } from "react-native";
-import React from "react";
-import { Stack, useSearchParams } from "expo-router";
-import useDocument from "../../../hooks/useDocument";
-import Book from "../../../types/Book";
-import HeaderRight from "../../../components/HeaderRight";
-import globalStyles from "../../../styles/globalStyles";
-import ViewBook from "../../../components/ViewBook";
-import StyledButton from "../../../components/StyledButton";
 import { faker } from "@faker-js/faker";
+import { Stack, useSearchParams } from "expo-router";
+import React from "react";
+import { Alert, Text, View } from "react-native";
+import HeaderRight from "../../../components/HeaderRight";
+import StyledButton from "../../../components/StyledButton";
+import useDocument from "../../../hooks/useDocument";
+import globalStyles from "../../../styles/globalStyles";
+import Book from "../../../types/Book";
 
 export default function BookDetails() {
   const { id } = useSearchParams();

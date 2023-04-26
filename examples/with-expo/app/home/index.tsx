@@ -1,13 +1,13 @@
-import { View, Text, Alert, FlatList } from "react-native";
-import React from "react";
-import { Stack } from "expo-router";
-import HeaderRight from "../../components/HeaderRight";
-import globalStyles from "../../styles/globalStyles";
-import StyledButton from "../../components/StyledButton";
-import useCollection from "../../hooks/useCollection";
 import { faker } from "@faker-js/faker";
-import Book from "../../types/Book";
+import { Stack } from "expo-router";
+import React from "react";
+import { Alert, FlatList, Text, View } from "react-native";
+import HeaderRight from "../../components/HeaderRight";
+import StyledButton from "../../components/StyledButton";
 import ViewBook from "../../components/ViewBook";
+import useCollection from "../../hooks/useCollection";
+import globalStyles from "../../styles/globalStyles";
+import Book from "../../types/Book";
 
 export default function Home() {
   const { data, create, remove, refreshData } = useCollection<Book>("books");
