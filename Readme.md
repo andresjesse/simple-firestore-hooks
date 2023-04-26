@@ -20,7 +20,13 @@ There are already libs that does a good job for that, such as [react-firebase-ho
 
 3. In your firebase app, create a Web App and copy `firebaseConfig` object to `config/firebaseConfig.ts`.
 
-4. Check usage details for each hook in the sequence:
+4. Install firebase library:
+
+- For expo apps: `npx expo install firebase`
+
+- For web apps (react js): `yarn add firebase`
+
+5. Check usage details for each hook in the sequence:
 
 - [`useFirebase`](#the-useFirebase-hook)
 - [`useAuth`](#the-useAuth-hook)
