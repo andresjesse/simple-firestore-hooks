@@ -18,6 +18,8 @@ This example app uses `simple-firestore-hooks` with Expo and Expo. Expo Router i
 
 3. Check `components/HeaderRight.tsx` for `useAuth` example of usage for logout.
 
+4. Check `app/home/index.tsx` for `useCollection` example.
+
 ## Additional reference for firebase and expo
 
 https://docs.expo.dev/guides/using-firebase/
