@@ -37,11 +37,12 @@ export default function Page() {
         onPress={async () => {
           try {
             await login(email, password);
-            router.push("home");
+            router.push("/home");
           } catch (error: any) {
             Alert.alert("Login error", error.toString());
           }
         }}
+        style={{ marginTop: 12 }}
       />
     </View>
   );

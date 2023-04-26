@@ -32,7 +32,6 @@ const globalStyles = StyleSheet.create({
     backgroundColor: "darkblue",
     borderRadius: theme.defaultRadius,
     width: "100%",
-    marginTop: 12,
   },
   buttonText: {
     color: "white",

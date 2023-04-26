@@ -13,7 +13,7 @@ type StyledButtonProps = {
 
 export default function StyledButton({ title, ...props }: StyledButtonProps) {
   return (
-    <TouchableHighlight {...props} style={globalStyles.button}>
+    <TouchableHighlight {...props} style={[globalStyles.button, props.style]}>
       <Text style={globalStyles.buttonText}>{title}</Text>
     </TouchableHighlight>
   );
