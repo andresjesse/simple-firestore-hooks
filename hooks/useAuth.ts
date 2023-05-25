@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {
   getAuth,
   onAuthStateChanged,
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   User,
@@ -31,6 +32,10 @@ export default function useAuth() {
    */
   const logout = async () => {
     await signOut(getAuth());
+  };
+
+  const registerUser = async (email: string, password: string) => {
+    await createUserWithEmailAndPassword(getAuth(), email, password);
   };
 
   useEffect(() => {
