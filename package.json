@@ -1,0 +1,23 @@
+{
+  "name": "simple-firestore-hooks",
+  "version": "1.0.0",
+  "description": "<!-- prettier-ignore-start --> # Simple Firestore Hooks",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresjesse/simple-firestore-hooks.git"
+  },
+  "author": "Andres Jessé Porfirio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andresjesse/simple-firestore-hooks/issues"
+  },
+  "homepage": "https://github.com/andresjesse/simple-firestore-hooks#readme"
+}
