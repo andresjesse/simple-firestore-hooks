@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/andresjesse/simple-firestore-hooks/issues"
   },
-  "homepage": "https://github.com/andresjesse/simple-firestore-hooks#readme"
+  "homepage": "https://github.com/andresjesse/simple-firestore-hooks#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-typescript": "^7.21.5",
+    "@firebase/rules-unit-testing": "^2.0.7",
+    "@jest/globals": "^29.5.0",
+    "firebase": "^9.22.1",
+    "jest": "^29.5.0"
+  }
 }
