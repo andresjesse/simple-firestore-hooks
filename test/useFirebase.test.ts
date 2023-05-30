@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { renderHook } from "@testing-library/react-hooks/dom";
+import { renderHook } from "@testing-library/react";
 import useFirebase from "../hooks/useFirebase";
 
 describe("useFirebase", () => {
