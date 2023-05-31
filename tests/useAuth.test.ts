@@ -1,10 +1,7 @@
-import { beforeAll, describe, expect, test } from "@jest/globals";
+import { beforeAll, describe, expect, jest, test } from "@jest/globals";
 import { renderHook, waitFor } from "@testing-library/react";
 import useFirebase from "../hooks/useFirebase";
 import useAuth from "../hooks/useAuth";
-
-import fetch from "cross-fetch";
-global.fetch = fetch;
 
 describe("useAuth", () => {
   beforeAll(() => {

@@ -169,4 +169,11 @@ await refresh();
 
 Want a more detailed example of usage? Check out this repository: https://github.com/andresjesse/cra-firebase-experiment
 
+# Development
+
+This section regards to hooks development and can be useful if you want to fork, extend or contribute to this project.
+
+Here are some notes:
+- Console outputs were disabled in testing environment, check `.env.test` if you want to see details.
+
 <!-- prettier-ignore-end -->
