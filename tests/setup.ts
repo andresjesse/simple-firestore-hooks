@@ -4,7 +4,7 @@ import { jest } from "@jest/globals";
 import fetch from "cross-fetch";
 global.fetch = fetch;
 
-if (process.env.DISABLE_CONSOLE_OUTPUT) {
+if (process.env.DISABLE_CONSOLE_OUTPUT === "true") {
   global.console = {
     ...console,
     log: jest.fn(),

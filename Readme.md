@@ -174,6 +174,6 @@ Want a more detailed example of usage? Check out this repository: https://github
 This section regards to hooks development and can be useful if you want to fork, extend or contribute to this project.
 
 Here are some notes:
-- Console outputs were disabled in testing environment, check `.env.test` if you want to see details.
+- Console outputs were disabled in testing environment, you can re-enable it in `.env.test` (useful when writting tests).
 
 <!-- prettier-ignore-end -->

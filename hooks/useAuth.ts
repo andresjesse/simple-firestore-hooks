@@ -34,6 +34,11 @@ export default function useAuth() {
     await signOut(getAuth());
   };
 
+  /**
+   * Wrapper for creating new Users
+   * @param email user email
+   * @param password user password (min 6 chars)
+   */
   const registerUser = async (email: string, password: string) => {
     await createUserWithEmailAndPassword(getAuth(), email, password);
   };

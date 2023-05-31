@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "firebase emulators:exec --project=test 'jest'"
+    "test": "firebase emulators:exec --project=test 'jest -i'"
   },
   "repository": {
     "type": "git",
