@@ -1,0 +1,16 @@
+name: Continuous Integration
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: yarn
+      - name: Install firebase-tools
+        run: npm install -g firebase-tools
+      - name: Test hooks with firebase emulators
+        run: yarn test
