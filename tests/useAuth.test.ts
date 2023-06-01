@@ -71,4 +71,47 @@ describe("useAuth", () => {
       expect(result.current.user).not.toBeNull();
     });
   });
+
+  test("a new user cannot be created with an existing email", async () => {
+    const { result } = renderHook(() => useAuth());
+    expect(result.current).not.toBeNull();
+
+    await waitFor(() => {
+      expect(result.current.loading).toBeFalsy();
+    });
+
+    await expect(
+      result.current.registerUser("user@example.com", "123456")
+    ).rejects.toThrowError();
+  });
+
+  test("a wrong password raises an error when trying to login", async () => {
+    const { result } = renderHook(() => useAuth());
+    expect(result.current).not.toBeNull();
+
+    await waitFor(() => {
+      expect(result.current.loading).toBeFalsy();
+    });
+
+    await expect(
+      result.current.login("user@example.com", "123456-wrong")
+    ).rejects.toThrowError();
+  });
+
+  test("the loading state returns to false after a failing login try", async () => {
+    const { result } = renderHook(() => useAuth());
+    expect(result.current).not.toBeNull();
+
+    await waitFor(() => {
+      expect(result.current.loading).toBeFalsy();
+    });
+
+    await expect(
+      result.current.login("user@example.com", "123456-wrong")
+    ).rejects.toThrowError();
+
+    await waitFor(() => {
+      expect(result.current.loading).toBeFalsy();
+    });
+  });
 });

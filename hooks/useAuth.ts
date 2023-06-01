@@ -24,7 +24,11 @@ export default function useAuth() {
    */
   const login = async (email: string, password: string) => {
     setLoading(true);
-    await signInWithEmailAndPassword(getAuth(), email, password);
+    try {
+      await signInWithEmailAndPassword(getAuth(), email, password);
+    } finally {
+      setLoading(false);
+    }
   };
 
   /**
