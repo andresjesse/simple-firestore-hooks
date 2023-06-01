@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {
   getAuth,
   onAuthStateChanged,
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   User,
@@ -23,7 +24,11 @@ export default function useAuth() {
    */
   const login = async (email: string, password: string) => {
     setLoading(true);
-    await signInWithEmailAndPassword(getAuth(), email, password);
+    try {
+      await signInWithEmailAndPassword(getAuth(), email, password);
+    } finally {
+      setLoading(false);
+    }
   };
 
   /**
@@ -31,6 +36,15 @@ export default function useAuth() {
    */
   const logout = async () => {
     await signOut(getAuth());
+  };
+
+  /**
+   * Wrapper for creating new Users
+   * @param email user email
+   * @param password user password (min 6 chars)
+   */
+  const registerUser = async (email: string, password: string) => {
+    await createUserWithEmailAndPassword(getAuth(), email, password);
   };
 
   useEffect(() => {
@@ -44,5 +58,5 @@ export default function useAuth() {
     });
   }, []);
 
-  return { loading, user, login, logout };
+  return { loading, user, login, logout, registerUser };
 }
