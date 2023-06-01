@@ -6,6 +6,7 @@ import {
   getDocs,
   getFirestore,
   updateDoc,
+  getCountFromServer,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
@@ -80,5 +81,19 @@ export default function useCollection<T extends { [x: string]: any }>(
     // eslint-disable-next-line
   }, []);
 
-  return { data, loading, create, remove, update, all, refreshData };
+  // Custom functions
+
+    /**
+   * get the number of Documents
+   * @returns the count as number
+   */
+     const count = async () => {
+      setLoading(true);
+      const snapshot = await getCountFromServer(collection(db, collectionName));
+      const count = snapshot.data().count;
+      setLoading(false);
+      return count;
+    };
+
+  return { data, loading, create, remove, update, all, refreshData, count };
 }
