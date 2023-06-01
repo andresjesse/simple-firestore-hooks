@@ -15,6 +15,7 @@ import {
 export default function useAuth() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<User | null>(null);
+  const [error, setError] = useState(false);
 
   /**
    * Wrapper for login users with loading state flag for conditional renders.
@@ -23,7 +24,12 @@ export default function useAuth() {
    */
   const login = async (email: string, password: string) => {
     setLoading(true);
-    await signInWithEmailAndPassword(getAuth(), email, password);
+    await signInWithEmailAndPassword(getAuth(), email, password)
+    .catch(() => {
+      setError(true);
+    });
+    
+    setLoading(false);
   };
 
   /**
@@ -44,5 +50,5 @@ export default function useAuth() {
     });
   }, []);
 
-  return { loading, user, login, logout };
+  return { error, loading, user, login, logout };
 }
