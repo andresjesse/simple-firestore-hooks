@@ -1,13 +1,13 @@
 import { faker } from "@faker-js/faker";
 import { Stack, useGlobalSearchParams } from "expo-router";
-import React from "react";
 import { Alert, Text, View } from "react-native";
+
 import HeaderRight from "../../../components/HeaderRight";
+import Loading from "../../../components/Loading";
 import StyledButton from "../../../components/StyledButton";
 import useDocument from "../../../firebase/hooks/useDocument";
 import globalStyles from "../../../styles/globalStyles";
 import Book from "../../../types/Book";
-import Loading from "../../../components/Loading";
 
 export default function BookDetails() {
   const { id } = useGlobalSearchParams();

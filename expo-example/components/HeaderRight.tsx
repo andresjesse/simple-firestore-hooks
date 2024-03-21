@@ -1,6 +1,6 @@
 import { useRouter } from "expo-router";
-import React from "react";
 import { Alert, Text } from "react-native";
+
 import useAuth from "../firebase/hooks/useAuth";
 import StyledButton from "./StyledButton";
 

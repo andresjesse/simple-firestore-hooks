@@ -1,5 +1,5 @@
-import { View, Text, ActivityIndicator } from "react-native";
-import React from "react";
+import { ActivityIndicator, View } from "react-native";
+
 import globalStyles from "../styles/globalStyles";
 
 export default function Loading() {

@@ -1,6 +1,6 @@
 import { useRouter } from "expo-router";
-import React from "react";
 import { Alert, Text, View } from "react-native";
+
 import Book from "../types/Book";
 import StyledButton from "./StyledButton";
 
@@ -26,7 +26,7 @@ export default function ViewBook({ book, onDelete }: ViewBookProps) {
           title="View Book Details"
           onPress={() => {
             if (book.id) {
-              router.push("/home/" + book.id);
+              router.push(`/home/${book.id}/`);
             } else {
               Alert.alert(
                 "View error",

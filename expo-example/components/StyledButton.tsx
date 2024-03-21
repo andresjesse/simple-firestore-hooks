@@ -1,9 +1,9 @@
-import React from "react";
 import {
   Text,
   TouchableHighlight,
   TouchableHighlightProps,
 } from "react-native";
+
 import globalStyles from "../styles/globalStyles";
 
 type StyledButtonProps = {

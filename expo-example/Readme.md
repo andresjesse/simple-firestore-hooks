@@ -12,15 +12,13 @@ This example app uses `simple-firestore-hooks` with Expo and Expo. Expo Router i
 
 ## Want to study this code? where to start?
 
-1. Check `app/_layout.tsx` for `useFirebase` example of usage. This project is using expo-router SplashScreen for initial loading.
+1. Check `app/index.tsx` for `useAuth` example of usage for login.
 
-2. Check `app/index.tsx` for `useAuth` example of usage for login.
+2. Check `components/HeaderRight.tsx` for `useAuth` example of usage for logout.
 
-3. Check `components/HeaderRight.tsx` for `useAuth` example of usage for logout.
+3. Check `app/home/index.tsx` for `useCollection` example.
 
-4. Check `app/home/index.tsx` for `useCollection` example.
-
-5. Check `app/home/[id]/index.tsx` for `useDocument` example.
+4. Check `app/home/[id]/index.tsx` for `useDocument` example.
 
 ## Additional reference for firebase and expo
 

@@ -1,14 +1,14 @@
 import { faker } from "@faker-js/faker";
 import { Stack } from "expo-router";
-import React from "react";
 import { Alert, FlatList, Text, View } from "react-native";
+
 import HeaderRight from "../../components/HeaderRight";
+import Loading from "../../components/Loading";
 import StyledButton from "../../components/StyledButton";
 import ViewBook from "../../components/ViewBook";
 import useCollection from "../../firebase/hooks/useCollection";
 import globalStyles from "../../styles/globalStyles";
 import Book from "../../types/Book";
-import Loading from "../../components/Loading";
 
 export default function Home() {
   const { data, create, remove, refreshData, loading } =

@@ -3,7 +3,7 @@
 
 This is not a production-ready library, I use it as a didactic project! But feel free to copy/use/improve those hooks for your projects.
 
-The [firebase](expo-example/firebase/) folder contains hooks that abstract some Firestore/Auth features and provide a nice way to integrate those services to react apps. All hooks must be used inside `FirebaseContextProvider`, also found in the same folder.
+The [firebase](expo-example/firebase/) folder contains hooks that abstract some Firestore/Auth features and provide a nice way to integrate those services to React apps. 
 
 There are already libs that does a good job for that, such as [react-firebase-hooks](https://github.com/CSFrequency/react-firebase-hooks) and [reactfire](https://github.com/FirebaseExtended/reactfire), so why build a new one?
 
@@ -14,43 +14,26 @@ There are already libs that does a good job for that, such as [react-firebase-ho
 
 ## Usage
 
-This guide covers usage with Expo/React Native. If you want to use on web, the hooks probably will work without changes. The context, otherwise, can require a little change to remove the AsyncStorage persistency. You can check a working web code in the branch [firebase-v9](https://github.com/andresjesse/simple-firestore-hooks/tree/firebase-v9), it uses a custom hook `useFirebase` instead of context and works well on React JS.
+This guide covers usage with Expo/React Native. If you want to use on web, the hooks probably will work without changes. The `useFirebase` hook (base for the other ones), otherwise, can require a little change to remove the AsyncStorage persistency. You can check a working web code in the branch [firebase-v9](https://github.com/andresjesse/simple-firestore-hooks/tree/firebase-v9), it uses an old version of this code and work(ed) well on React JS.
 
 1. Copy [firebase](expo-example/firebase/) folder to your project;
 
 2. Create a firebase app (I'll not cover that) and add Firestore + Auth services (also enable login with email/password and add a user to start testing): https://firebase.google.com/
 
-3. In your firebase app, create a Web App and copy `firebaseConfig` object to `config/firebaseConfig.ts`.
+3. In your firebase app, create a Web App and copy `firebaseConfig` object to `config/firebaseConfig.ts` (I let a sample file, `firebaseConfig.example.ts` that can be base for your config file).
 
 4. Install dependencies:
 
 - Firebase JS SDK: `npx expo install firebase`
 - AsyncStorage: `npx expo install @react-native-async-storage/async-storage`
+- Zustand: `npx expo install zustand`
 
 5. Check usage details for the context and hooks in the sequence:
 
-- [`context`](#the-context)
 - [`useAuth`](#the-useAuth-hook)
 - [`useCollection`](#the-useCollection-hook)
 - [`useDocument`](#the-useDocument-hook)
-
-### The global context
-
-Your top-level component must be wrapped by `FirebaseContextProvider`. 
-
-If you use `Expo Router`, the main `_layout.tsx` must wrap it:
-
-```js
-export default function _layout() {
-  return (
-    <FirebaseContextProvider firebaseConfig={firebaseConfig}>
-      <Slot />
-    </FirebaseContextProvider>
-  );
-}
-```
-
-You can check a more detailed usage example here: [_layout.tsx](expo-example/app/_layout.tsx)
+- [`useFirebase`](#the-useFirebase-hook)
 
 ### The `useAuth` hook
 
@@ -162,8 +145,14 @@ await refresh();
 
 ```
 
+### The `useFirebase` hook
+
+This hook is used internally by other hooks to manage firebase and auth instances using a zustand store. You don't need to use it.
+
 ## React JS Example (firebase V9)
 
 Want a more detailed example of usage? Check out this repository (React JS): https://github.com/andresjesse/cra-firebase-experiment
+
+This one can also be explored (full functional application): https://github.com/andresjesse/sd-mvp-social-care 
 
 <!-- prettier-ignore-end -->
