@@ -1,17 +1,24 @@
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Alert, Text, TextInput, View } from "react-native";
+
+import Loading from "../components/Loading";
 import StyledButton from "../components/StyledButton";
 import useAuth from "../firebase/hooks/useAuth";
 import globalStyles from "../styles/globalStyles";
-import Loading from "../components/Loading";
 
 export default function _screen() {
-  const { login, loading } = useAuth();
+  const { user, login, loading } = useAuth();
   const router = useRouter();
 
   const [email, setEmail] = useState("user@example.com");
   const [password, setPassword] = useState("123456");
+
+  useEffect(() => {
+    if (user) {
+      router.replace("/home/");
+    }
+  }, [user]);
 
   if (loading) return <Loading />;
 

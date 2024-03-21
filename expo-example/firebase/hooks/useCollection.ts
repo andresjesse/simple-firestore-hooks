@@ -9,6 +9,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import useFirebase from "./useFirebase";
 
 /**
  * Hook to access and manage a firestore collection.
@@ -20,6 +21,8 @@ export default function useCollection<T extends { [x: string]: any }>(
   collectionName: string,
   precache = true
 ) {
+  useFirebase();
+
   const db = getFirestore();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<Array<T>>([]);

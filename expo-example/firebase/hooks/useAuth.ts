@@ -7,14 +7,15 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { useFirebaseContext } from "../context/FirebaseContextProvider";
+
+import useFirebase from "./useFirebase";
 
 /**
  * Firebase authentication hook.
  * @returns Access to main auth service using email and password strategy, plus user object and loading state flag.
  */
 export default function useAuth() {
-  const { auth } = useFirebaseContext();
+  const { auth } = useFirebase();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<User | null>(null);
 

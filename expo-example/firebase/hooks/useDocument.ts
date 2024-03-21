@@ -6,6 +6,7 @@ import {
   setDoc,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import useFirebase from "./useFirebase";
 
 export type Book = {
   id?: string;
@@ -23,6 +24,8 @@ export default function useDocument<T extends { [x: string]: any }>(
   id: string,
   realtime: boolean = true
 ) {
+  useFirebase();
+
   const db = getFirestore();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<T>();
