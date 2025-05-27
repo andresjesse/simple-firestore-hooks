@@ -155,4 +155,8 @@ Want a more detailed example of usage? Check out this repository (React JS): htt
 
 This one can also be explored (full functional application): https://github.com/andresjesse/sd-mvp-social-care 
 
+## Troubleshooting
+
+On Expo SDK 53, if you see "Warning: Error: Component auth has not been registered yet", follow this solution: https://stackoverflow.com/a/79636536
+
 <!-- prettier-ignore-end -->
