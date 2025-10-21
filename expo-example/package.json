@@ -11,10 +11,10 @@
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
     "@react-native-async-storage/async-storage": "2.2.0",
-    "expo": "^54.0.13",
+    "expo": "^54.0.17",
     "expo-constants": "~18.0.9",
     "expo-linking": "~8.0.8",
-    "expo-router": "~6.0.12",
+    "expo-router": "~6.0.13",
     "expo-status-bar": "~3.0.8",
     "firebase": "^11.0.2",
     "metro-source-map": "^0.80.7",

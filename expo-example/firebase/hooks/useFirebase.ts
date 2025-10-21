@@ -5,9 +5,14 @@ import { useEffect } from "react";
 
 import firebaseConfig from "../config/firebaseConfig";
 import useFirebaseStore from "../store/useFirebaseStore";
+import { Platform } from "react-native";
 
-const getReactNativePersistence = (firebaseAuth as any)
-  .getReactNativePersistence;
+const getPersistence = () => {
+  if (Platform.OS === "web")
+    return (firebaseAuth as any).browserSessionPersistence;
+
+  return (firebaseAuth as any).getPersistence(AsyncStorage);
+};
 
 const useFirebase = () => {
   const { setApp, setAuth, app, auth } = useFirebaseStore();
@@ -18,7 +23,7 @@ const useFirebase = () => {
       setApp(app);
 
       const auth = firebaseAuth.initializeAuth(app, {
-        persistence: getReactNativePersistence(AsyncStorage),
+        persistence: getPersistence(),
       });
       setAuth(auth);
     }

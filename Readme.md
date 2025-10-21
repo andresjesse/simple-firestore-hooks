@@ -14,7 +14,9 @@ There are already libs that does a good job for that, such as [react-firebase-ho
 
 ## Usage
 
-This guide covers usage with Expo/React Native. If you want to use on web, the hooks probably will work without changes. The `useFirebase` hook (base for the other ones), otherwise, can require a little change to remove the AsyncStorage persistency. You can check a working web code in the branch [firebase-v9](https://github.com/andresjesse/simple-firestore-hooks/tree/firebase-v9), it uses an old version of this code and work(ed) well on React JS.
+This guide covers usage with Expo/React Native for Android and iOS only. 
+
+*Usage on web in possible for learning purposes*, however, the `useFirebase` hook (base for the other ones) is not fully functional and throws an error when page is reloaded. Feel free to try, you will need to go back to login page ("/") after each reload. This error occurs because useFirebase initialization is async, when browser reloads the page it does now await firebase init before useCollection, useDocument and useAuth calls. If you re-do navigation from root page it will work fine. You can check a fully working web code in the branch [firebase-v9](https://github.com/andresjesse/simple-firestore-hooks/tree/firebase-v9), it uses an old version of this code and work(ed) well on React JS.
 
 1. Copy [firebase](expo-example/firebase/) folder to your project;
 
