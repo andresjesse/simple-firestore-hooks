@@ -17,7 +17,7 @@ export default function BookDetails() {
     data: book,
     loading,
     upsert,
-  } = useDocument<Book>("books", id as string);
+  } = useDocument<Book>("books", id as string, true);
 
   // important: always check for loading state since firestore is async!
   // Also, you can check for existence of book object so your type Book | undefined becomes a Book for sure

@@ -11,7 +11,7 @@ export default function _screen() {
   const { user, login, loading } = useAuth();
   const router = useRouter();
 
-  const [email, setEmail] = useState("user@example.com");
+  const [email, setEmail] = useState("fulano@example.com");
   const [password, setPassword] = useState("123456");
 
   useEffect(() => {

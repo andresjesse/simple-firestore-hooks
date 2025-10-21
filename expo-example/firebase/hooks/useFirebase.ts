@@ -11,7 +11,10 @@ const getPersistence = () => {
   if (Platform.OS === "web")
     return (firebaseAuth as any).browserSessionPersistence;
 
-  return (firebaseAuth as any).getPersistence(AsyncStorage);
+  const getReactNativePersistence = (firebaseAuth as any)
+    .getReactNativePersistence;
+
+  return getReactNativePersistence(AsyncStorage);
 };
 
 const useFirebase = () => {
